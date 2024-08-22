@@ -4,15 +4,20 @@ from .extensions import db, migrate, login_manager
 from .config import Config
 
 from .routes.dashboard import dashboard
+from .routes.users import users
+from .routes.login import login
 
 
 def create_app(config_class=Config):
     app = Flask(__name__)
+    app.app_context().push()
     app.config.from_object(config_class)
 
     app.jinja_env.globals['now'] = datetime.now
 
+    app.register_blueprint(login)
     app.register_blueprint(dashboard)
+    app.register_blueprint(users)
 
     db.init_app(app)
     migrate.init_app(app, db)

@@ -43,7 +43,7 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="{{ url_for('dashboard.index') }}">მთავარი გვერდი</a></li>
                                 <li class="breadcrumb-item active">{{ self.title() }}</li>
                             </ol>
                         </div><!-- /.col -->
@@ -91,7 +91,7 @@
     <!-- overlayScrollbars -->
     <script src="{{ url_for('static', filename='plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script>
+    <script src="{{ url_for('static', filename='dist/js/adminlte.js') }}"></script><env></env>
     <!-- AdminLTE for demo purposes -->
     <script src="{{ url_for('static', filename='dist/js/demo.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
